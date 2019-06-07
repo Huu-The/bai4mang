@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Cân nặng (Kg):<input type="number" id="weight"><br> Chiều cao (M):<input type="number" id="height">
+    <p id="kq"></p>
+    <button onclick="ketqua();">Tính</button>
+</body>
+<script>
+    function ketqua() {
+        var nang = parseFloat(document.getElementById("weight").value);
+        var cao = parseFloat(document.getElementById("height").value);
+        var tinh = (nang / Math.pow(cao, 2));
+        if (tinh < 18.5) {
+            document.getElementById("kq").innerHTML = "Underweight";
+        } else if (tinh > 18.5 && tinh < 25) {
+            document.getElementById("kq").innerHTML = "Normal";
+        } else if (tinh > 25 && tinh < 30) {
+            document.getElementById("kq").innerHTML = "Overweight";
+        } else {
+            document.getElementById("kq").innerHTML = "Obese";
+        }
+    }
+</script>
+
+</html>
